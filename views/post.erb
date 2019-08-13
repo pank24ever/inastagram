@@ -1,0 +1,13 @@
+<form action="/post" method="POST" enctype="multipart/form-data">
+  <label for="title">タイトル</label>
+  <input type="text" name="title" id="title" required/>
+  <br>
+  <label for="contents">コンテンツ</label>
+  <textarea name="contents" id="contents" required></textarea>
+  <br>
+  <span>
+      <span>File</span>
+      <input type="file" name="img" required>
+  </span>
+  <input type="submit" value="Submit!!">
+</form>
