@@ -164,12 +164,26 @@ post '/edit_plofile/:id' do
   redirect '/plofile'
 end
 
+#Likeする
+get '/like/:post_id' do
+  check_login
+  connection.exec('insert into "like"(user_id,post_id) values($1,$2)',[session[:user_id],params[:post_id]])
+  redirect '/timeline'
+end
+
+#Likeを外す
+get '/unlike/:post_id' do
+  check_login
+  connection.exec('delete from "like" where user_id = $1 and post_id = $2',[session[:user_id],params[:post_id]])
+  redirect '/timeline'
+end
+
 #ユーザー検索
 get '/search' do
 
 end
 
 #Like一覧
-get '/like' do
+get '/likelist' do
   erb :like
 end
