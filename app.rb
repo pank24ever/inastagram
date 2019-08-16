@@ -184,6 +184,7 @@ get '/search' do
 end
 
 #Like一覧
-get '/likelist' do
+get '/like_list' do
+  connection.exec('select * from "like" where ')
   erb :like
 end
