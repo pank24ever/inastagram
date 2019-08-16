@@ -106,7 +106,7 @@ get '/timeline' do
   check_login
   @title = "TIME LINE"
   @posts = connection.exec('select * from users inner join post on users.id = post.user_id order by post.id desc')
-  erb :timeline
+  erb :timeline,layout: nil
 end
 
 #投稿画面(タイトル、コンテンツ、画像 )
@@ -185,6 +185,8 @@ end
 
 #Like一覧
 get '/like_list' do
-  connection.exec('select * from "like" where ')
-  erb :like
+  check_login
+  # @like = connection.exec('select * from "like" where user_id = $1',[session[:id]])
+
+  @likes = connection.exec('select * from "like" inner join post on "like".post_id = post.id where "like".user_id = $1',[session[:id]])
 end
