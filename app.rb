@@ -120,7 +120,9 @@ post '/post' do
   title = params['title']
   contents = params['contents']
   @file = params['img']['filename']
+
   FileUtils.mv(params['img']['tempfile'],"./public/images/#{@file}") 
+  
   connection.exec('insert into post(title,contents,user_id,img) 
   values($1,$2,$3,$4)',[title,contents,user_id,@file])
   redirect '/timeline'
@@ -189,4 +191,5 @@ get '/like_list' do
   # @like = connection.exec('select * from "like" where user_id = $1',[session[:id]])
 
   @likes = connection.exec('select * from "like" inner join post on "like".post_id = post.id where "like".user_id = $1',[session[:id]])
+  erb :like_list
 end
