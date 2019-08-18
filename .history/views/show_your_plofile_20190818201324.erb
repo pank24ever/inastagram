@@ -1,0 +1,5 @@
+<%@your_plofile.each do |plofile|%>
+    <img src="./plofile_img/<%=plofile['plofile_img']%>" style="height: 150px; width: 150px; border-radius: 50%;">
+    <h3>User:<%= plofile['user_name'] %></h3>
+    <h4>Name:<%= plofile['name']%></h4>
+    <button><a href="/following/:user_id">follow</a><>

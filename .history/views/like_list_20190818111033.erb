@@ -1,0 +1,4 @@
+<% @likes.each do |like| %>
+  <img src="./images/<%= like['img'] %>" alt="" style="width: 300px; height: 300px;"> 
+  <p>title:<%= like[:title]%></p>
+<% end %>
