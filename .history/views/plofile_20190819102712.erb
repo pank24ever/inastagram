@@ -1,0 +1,19 @@
+<h2><%= @users['user_name'] %></h2>
+<img src="./plofile_img/<%= @users['plofile_img']%>"  style="width: 250px; height: 250px; border-radius: 50%;">
+<h4><%= @users['name'] %></h4>
+<p><%= @users['plofile_contents'] %></p>
+
+
+<ul>
+  <ul><a href="followed">Followed</a></ul>
+  <ul><a href="following">Following</a></ul>
+</ul>
+
+<button><a href="/edit_plofile/<%= @user_id %>">Edit your Plofile</a></button>
+
+<h3>recent posts</h3>
+<% @user_posts.each do |user_post| %>
+  c
+<% end %>
+
+

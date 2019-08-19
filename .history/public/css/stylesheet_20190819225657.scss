@@ -1,0 +1,16 @@
+.select_menu_wrapper {
+    margin: 0 auto;
+    text-align: center;
+    .select_menu {
+        justify-content: space-around;
+        .select_menu_right {
+            margin: 20% 15% 30% 40%;
+            border: 0.5px solid #78909C;
+            margin: 0 auto;
+            .menu_title {
+                color: #FF80AB;
+                font-family: 'Righteous', cursive;
+            }
+        }
+    }
+}

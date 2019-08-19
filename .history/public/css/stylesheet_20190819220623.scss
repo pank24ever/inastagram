@@ -1,0 +1,11 @@
+.select_menu_wrapper {
+    margin: 0 auto;
+    text-align: center;
+    .select_menu_left {
+        margin: 0 auto;
+        .title {
+            color: red;
+            font-family: 'Righteous', cursive;
+        }
+    }
+}

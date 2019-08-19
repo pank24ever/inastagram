@@ -4,9 +4,21 @@
 }
 
 .select_menu_wrapper .select_menu {
+  display: flex;
+  justify-content: center;
+}
+
+.select_menu_wrapper .select_menu .select_menu_right {
+  margin: 20% 15% 30% 40%;
+  border: 0.5px solid #78909C;
   margin: 0 auto;
 }
 
-.select_menu_wrapper .select_menu .title {
-  color: red;
+.select_menu_wrapper .select_menu .select_menu_right .menu_title {
+  color: #FF80AB;
+  font-family: 'Righteous', cursive;
+}
+
+.select_menu_wrapper .select_menu .select_menu_left img {
+  color: #03A9F4;
 }

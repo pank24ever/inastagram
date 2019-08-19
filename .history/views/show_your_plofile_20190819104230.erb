@@ -1,0 +1,9 @@
+<%@your_plofile.zip(@your_posts) do |plofile,your_post|%> 
+    <h3>User:<%= plofile['user_name'] %></h3>
+    <img src="./plofile_img/<%= plofile['plofile_img'] %>" style="height: 150px; width: 150px; border-radius: 50%;">
+    <h4>Name:<%= plofile['name']%></h4>
+    <button><a href="/follow/:user_id">follow</a></button>
+    <button><a href="/unfollow/:user_id">unfollow</a></button>
+    <>
+    <img src="./images/<%= your_post['img']%>" style="width: 200px; height: 200px;">
+<% end %>

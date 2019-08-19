@@ -1,0 +1,2 @@
+$(function() {
+            $("#like").click(function() {})
