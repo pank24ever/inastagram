@@ -1,0 +1,18 @@
+
+  <body>
+    <% @posts.each do |post| %>
+  <img src="./plofile_img/<%= post['plofile_img']%>" style="height: 50px; width: 50px; border-radius: 50%;">
+
+  <h3><a href="/show_your_plofile/<%=post['user_id']%>">User:<%= post['user_name'] %></a></h3>
+  
+  <h4>Title:<%= post['title'] %></h4>
+  <h2>Contents:<%= post['contents'] %></h2>
+
+  <img src="./images/<%= post['img'] %>" alt="" style="width: 300px; height: 300px;"> 
+
+  <span><i class="fas fa-heart" style="color:red;" id="like" class="like"><a href="/like/<%= post['id']%>">Like</a></i></span>
+  <span><i class="far fa-heart" id="unlike" class="unlike"><a href="/unlike/<%= post['id']%>">Not Like</a></i></span>
+
+  <button><a href="/delete/<%= post['id'] %>">Delete:</a></button>
+  <p>=====================================</p>
+<% end %> 
