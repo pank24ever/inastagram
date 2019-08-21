@@ -1,0 +1,17 @@
+<% @posts.each do |post| %>
+  <img src="./plofile_img/<%= post['plofile_img']%>" style="height: 50px; width: 50px; border-radius: 50%;">
+  <h3><a href="/show_your_plofile/<%=post['user_id']%>">User:<%= post['user_name'] %></a></h3>
+  <h4>Title:<%= post['title'] %></h4>
+  <h2>Contents:<%= post['contents'] %></h2>
+  <img src="./images/<%= post['img'] %>" alt="" style="width: 300px; height: 300px;"> 
+
+
+  <%#↑のデータ属性は、JSがデータを取得するためにある%>
+  <%#いいねボタン%>
+
+  <p><%= @like_infos[] %></p>
+  <span><i class="fas fa-heart unlike" data-url="/like/<%= post['id']%>"></i></span>
+
+  <button><a href="/delete/<%= post['id'] %>">Delete:</a></button>
+  <p>=====================================</p>
+<% end %> 
