@@ -1,0 +1,20 @@
+<div class="form">>
+
+</<div>
+<form action="/edit_plofile/<%= @user_id %>" method="POST"  enctype="multipart/form-data">
+  <span>
+      <span>File</span>
+      <input type="file" name="plofile_img" value="<%=@users['img']%>">
+  </span>
+
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name" value="<%=@users['name']%>">
+
+  <label for="user_name">user_name</label>
+  <input type="text" name="user_name" id="user_name" value="<%=@users['user_name']%>">
+
+  <label for="introduction">Introduction</label>
+  <input type="text" name="introduction" id="introduction" value="<%=@users['plofile_contents']%>">
+
+  <input type="submit" value="save!">
+</form>

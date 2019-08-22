@@ -17,18 +17,21 @@
     <title>Document</title>
   </head>
   <body>
-    <h2><%= @title%></h2>
-    <span><a href="/logout">logout</a></span>
-    <%= yield %>
-    <div class="select_menu">
-      <p><a href="/search">Search</a></p>
-      <p><a href="/post">Add Post</a></p>
-      <p><a href="/timeline">go timeline</a></p>
-      <p><a href="/like_list">Like</a></p>
-      <p><a href="/plofile">My Plofile</a></p>
-    </div>
-
+    <header>
+      <h2 class="menu_title">Inastagram</h2>
+    </header>
     
+    <%= yield %>
+    
+    <footer>
+      <div class="select_menu">
+        <p><a href="/timeline"><i class="fas fa-home icon"></i></a></p>
+        <p><a href="/search"><i class="fas fa-search icon"></i></a></p>
+        <p><a href="/post"><i class="fas fa-plus icon"></i></a></p> 
+        <p><a href="/like_list"><i class="far fa-heart icon"></i></a></p>
+        <p><a href="/plofile"><i class="far fa-user icon"></i></a></p>
+      </div>
+    </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"

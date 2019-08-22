@@ -1,0 +1,28 @@
+<% @posts.each do |post| %>
+  <div class="post_wrappeer">
+    <div class="post">
+      <div class="post_plofile">
+      <img src="./plofile_img/<%= post['plofile_img']%>" style="height: 50px; width: 50px; border-radius: 50%;" class="img-thumbnail inline-block_item">
+
+      <h3><a href="/show_your_plofile/<%=post['user_id']%>" class="inline-block_item"><%= post['user_name'] %></a></h3>
+    </div>
+    <img src="./images/<%= post['img'] %>" alt="" style="width: 500px; height: 500px;"> 
+    <br>
+    <div class="liked_wrapper">
+      <% if @like_infos[post['id']] %>
+      <span><i class="fas fa-heart liked" data-url="/like/<%= post['id']%>"></i></span>
+      <% else %>
+        <span><i class="fas fa-heart unlike" data-url="/like/<%= post['id']%>"></i></span>
+      <% end %>
+      <br>
+      <h5>Title:<%= post['title'] %></h5>
+      <br>
+      <h3>Contents:<%= post['contents'] %></h3>
+
+    </div>
+
+    <button><a href="/delete/<%= post['id'] %>">Delete:</a></button>
+
+    </div>
+  </div>
+<% end %> 

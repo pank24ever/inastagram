@@ -1,0 +1,52 @@
+.select_menu_wrapper {
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 80%;
+    height: 50%;
+}
+
+.select_menu_wrapper .select_menu_right {
+    margin: 20% 15% 30% 40%;
+    border: 0.5px solid #78909C;
+    margin: 0 auto;
+    padding: 15%;
+}
+
+.select_menu_wrapper .select_menu_right .menu_title {
+    color: #FF80AB;
+    font-family: 'Righteous', cursive;
+    font-size: 25px;
+}
+
+.liked {
+    color: red;
+}
+
+.br_space {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.form_wrapper {
+    margin: 0 auto;
+
+}
+
+.form {
+    position: relative;
+}
+
+
+.form_wrapper{
+    position: absolute;
+    top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+}

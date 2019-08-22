@@ -1,3 +1,4 @@
+  
 //いいねボタンには最初、unlikeクラスを付与していてクリックしたらtoggleで
 //新しくクラスをつけてます
 $(function() {　
@@ -34,6 +35,7 @@ $(function() {　
     $('.liked').on('click', function() {
         var data = $(this).attr('data-url');
         console.log(data);
+        var this_ele = this
         $.ajax({
             type: 'GET',
             url: data,
@@ -43,7 +45,7 @@ $(function() {　
                 dataType: "string",
                 $(function() {
                     //$(this).css('color', 'white');
-                    $(this).toggleClass('liked');
+                    $(this_ele).toggleClass('liked');
                     alert("ok");
                 });
             },

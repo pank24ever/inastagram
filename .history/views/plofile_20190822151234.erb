@@ -1,0 +1,34 @@
+<div class="plofile_username_wrapper">
+  <div class="plofile_username">
+  <h2><%= @users['user_name'] %></h2>
+  </div>
+
+  <div class="plofile_detail">
+    <div>
+      <img src="./plofile_img/<%= @users['plofile_img']%>"  style="width: 250px; height: 250px; border-radius: 50%;" class="img-thumbnail">
+    </div>
+    
+    <div>
+      <span>Posts</span>
+      <li>
+        <ul><a href="followed">Followed</a></ul>
+        <ul><a href="following">Following</a></ul>
+      </li>
+    </div>
+  </div>
+
+  <h2><%= @users['name'] %></h2>
+  <h5><%= @users['plofile_contents'] %></h5>
+
+  <span><a href="/logout">logout</a></span>
+
+  <div class="edit_button"></div>
+  <button><a href="/edit_plofile/<%= @user_id %>">Edit your Plofile</a></button>
+
+  <h3>recent posts</h3>
+  <% @user_posts.each do |user_post| %>
+    <img src="./images/<%= user_post['img']%>" style="width: 200px; height: 200px;">
+  <% end %>
+</div>
+
+

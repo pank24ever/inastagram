@@ -1,0 +1,16 @@
+<div class="form">  
+  <form action="/signup/<%= @user_id %>" method="POST" enctype="multipart/form-data" class="form_wrapper">
+
+    <div class="form_item">
+      <span>File</span>
+      <input type="file" name="plofile_img" values="plofile_img" require class="form_size">
+    </div>
+    <br>
+    <div class="form_item">
+      <input type="text" name="name" id="name" placeholder="Name">
+      <input type="text" name="user_name" id="user_name" placeholder="User Name" class="form_size">
+    </div>
+
+    <input type="submit" value="Submit!">
+  </form>
+</div>

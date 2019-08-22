@@ -36,7 +36,6 @@ get '/login' do
 end
 
 post '/login' do
-  @title = "LOGIN"
   email = params['email']
   password = params['password']
   id = connection.exec("select id from users where email = $1 and password = $2",[email,password]).first
@@ -50,7 +49,6 @@ end
 
 #新規登録画面(メアド、パスワード)
 get '/signup1' do 
-  @title = "SIGNUP"
   email = params['email']
   password = params['password']
   erb :signup1,layout: nil
@@ -71,7 +69,6 @@ end
 
 #新規登録画面(プロフィール画像、名前、ユーザーネーム)
 get '/signup/:id' do
-  @title = "SIGNUP"
   #ルートのid指定するために、paramsで取得！formタグのみではないらしい
   #次回、paramsの詳しい使い方を聞く！
   @user_id = params['id'] #変数は、erbファイルで使うため格納
@@ -102,7 +99,6 @@ end
 #タイムライン(フォローしている人の画像、自分の投稿した画像が見れる)
 get '/timeline' do
   check_login
-  @title = "TIME LINE"
   @like_infos = {}
   @posts = connection.exec('select post.id,post.title,post.contents,post.img,users.user_name,user_id,users.plofile_img from users inner join post on users.id = post.user_id order by post.id desc')
   @posts.each do |res|

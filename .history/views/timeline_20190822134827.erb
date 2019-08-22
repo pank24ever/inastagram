@@ -1,0 +1,21 @@
+<% @posts.each do |post| %>
+  <div class="post_wrappeer">
+    <img src="./plofile_img/<%= post['plofile_img']%>" style="height: 50px; width: 50px; border-radius: 50%;" class="img-thumbnail">
+
+    <h3><a href="/show_your_plofile/<%=post['user_id']%>">User:<%= post['user_name'] %></a></h3>
+
+    <h4>Title:<%= post['title'] %></h4>
+    <h2>Contents:<%= post['contents'] %></h2>
+    <img src="./images/<%= post['img'] %>" alt="" style="width: 500px; height: 500px;"> 
+  </div>
+  <%#↑のデータ属性は、JSがデータを取得するためにある%>
+
+  <% if @like_infos[post['id']] %>
+    <span><i class="fas fa-heart liked" data-url="/like/<%= post['id']%>"></i></span>
+  <% else %>
+    <span><i class="fas fa-heart unlike" data-url="/like/<%= post['id']%>"></i></span>
+  <% end %>
+
+  <button><a href="/delete/<%= post['id'] %>">Delete:</a></button>
+  <p>=====================================</p>
+<% end %> 
