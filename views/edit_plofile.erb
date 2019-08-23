@@ -14,28 +14,30 @@
   <body>
 
     <div class="form">
-      <form action="/edit_plofile/<%= @user_id %>" method="POST"  enctype="multipart/form-data" class="form_wrapper">
-
-      <div class="form_item">
-          <input type="file" name="plofile_img" value="<%=@users['img']%>" class="form_size" >
-      </div>
-      <div class="form_item">
-        <span>Name:</span>
-        <input type="text" name="name" id="name" value="<%=@users['name']%>" class="form_size" >
-      </div>
-      
-      <div class="form_item">
-        <span>User Name</span>
-        <input type="text" name="user_name" id="user_name" value="<%=@users['user_name']%>" class="form_size" >
-      </div>
-
-      <div class="form_item">
-        <span>Self-introduction</span>
-        <input type="text" name="introduction" id="introduction" value="<%=@users['plofile_contents']%>" class="form_size">
-      </div>
-      
-      <input type="submit" value="save!">
-    </form>
+      <form action="/edit_plofile/<%= @user_id %>" method="POST"  enctype="multipart/form-data">
+        <div class="form_wrapper">
+          <div class="edit_item">
+            <input type="file" name="plofile_img" value="<%=@users['img']%>" class="form_size" >
+          </div>
+            <br>
+          <div class="edit_item">
+              <span>Name:</span>
+              <input type="text" name="name" id="name" value="<%=@users['name']%>" class="form_size" >
+          </div>
+            <br>
+          <div class="edit_item">
+              <span>User Name:</span>
+              <input type="text" name="user_name" id="user_name" value="<%=@users['user_name']%>" class="form_size" >
+          </div>
+            <br>
+          <div class="edit_item">
+              <span>Self-introduction:</span>
+              <input type="text" name="introduction" id="introduction" value="<%=@users['plofile_contents']%>" class="form_size">
+          </div>
+            <br>
+              <input type="submit" value="save!" class="save_button">
+        </div>
+      </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

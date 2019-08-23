@@ -1,6 +1,6 @@
 <div class="plofile_username_wrapper">
   <div class="plofile_username">
-  <h2><%= @users['user_name'] %></h2>
+    <h2><%= @users['user_name'] %></h2>
   </div>
 
   <div class="plofile_detail">
@@ -29,6 +29,7 @@
   <div>
     <% @user_posts.each do |user_post| %>
       <img src="./images/<%= user_post['img']%>" class="past_post">
+      <button><a href="/edit_post/<%=user_post['id']%>">Edit</a></button>
     <% end %>
   </div>
 </div>

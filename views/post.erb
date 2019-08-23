@@ -1,13 +1,24 @@
-<form action="/post" method="POST" enctype="multipart/form-data">
-  <label for="title">タイトル</label>
-  <input type="text" name="title" id="title" required/>
-  <br>
-  <label for="contents">コンテンツ</label>
-  <textarea name="contents" id="contents" required></textarea>
-  <br>
-  <span>
-      <span>File</span>
-      <input type="file" name="img" required>
-  </span>
-  <input type="submit" value="Submit!!">
-</form>
+    <div class="form">
+      <form action="/post" method="POST" enctype="multipart/form-data" class="form_wrapper">
+      <div class="form_item">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" required/>
+      </div>
+      <br>
+      <div class="form_item">
+        <label for="contents">Contents:</label>
+        <textarea name="contents" id="contents" required></textarea>
+      </div>
+      <br>
+      <div class="form_item">
+        <span>
+          <span>Image:</span>
+          <input type="file" name="img" required>
+       </span>
+      </div>
+      <br>
+      <div class="form_item">
+        <input type="submit" value="Submit!!">
+      </div>
+      </form>
+    </div>

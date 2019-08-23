@@ -18,7 +18,6 @@ $(function() {　
                 $(function() {
                     //$(this).css('color', 'red');
                     $(this_ele).toggleClass("liked");
-                    alert("ok");
                 });
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -46,7 +45,6 @@ $(function() {　
                 $(function() {
                     //$(this).css('color', 'white');
                     $(this_ele).toggleClass('liked');
-                    alert("ok");
                 });
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {

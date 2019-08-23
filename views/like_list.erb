@@ -1,3 +1,5 @@
-<% @likes.each do |like| %>
-  <img src="./images/<%= like['img'] %>" alt="" style="width: 300px; height: 300px;"> 
-<% end %>
+<div class="like_list_wrapper">
+  <% @likes.each do |like| %>
+    <img src="./images/<%= like['img'] %>" alt="" class="like_list_post"> 
+  <% end %>
+</div>

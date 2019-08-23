@@ -1,14 +1,28 @@
-<h3>User:<%= @your_plofile['user_name'] %></h3>
-<img src="./plofile_img/<%= @your_plofile['plofile_img'] %>" style="height: 150px; width: 150px; border-radius: 50%;">
-<h4>Name:<%= @your_plofile['name']%></h4>
+<div class="plofile_username_wrapper">
+    <div class="plofile_username">
+        <h2><%= @your_plofile['user_name'] %></h2>
+    </div>
 
-<button><a href="/follow/<%=params['id']%>">follow</a></button>
-<button><a href="/unfollow/<%=params['id']%>">unfollow</a></button>
-<br>
+    <div class="plofile_detail">
+        <div>
+            <img src="/plofile_img/<%=@your_plofile['plofile_img']%>" style="height: 250px; width: 250px; border-radius: 50%;" class="img-thumbnail">
+        </div>
+        
+        <div>
+            <span>Posts</span>
+            <li>
+                <ul><a href="followed">Followed</a></ul>
+                <ul><a href="following">Following</a></ul>
+            </li>
+        </div>
+    </div>
 
-<h3>recent posts</h3>
-<% @your_posts.each do |post| %>
-    <img src="./images/<%= post['img']%>" style="width: 200px; height: 200px;">
-    <p>title:<%= post['title'] %></p>
-<% end %>
+    <h2>Name:<%= @your_plofile['name']%></h2>
+    <h5><%= @your_plofile['plofile_contents'] %></h5>
 
+    <div>
+        <% @your_posts.each do |post| %>
+            <img src="/images/<%= post['img']%>">
+        <% end %>
+    </div>
+</div>

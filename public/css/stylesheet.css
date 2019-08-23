@@ -29,14 +29,10 @@
     color: red;
 }
 
+
 .br_space {
     margin-bottom: 10px;
     padding-bottom: 10px;
-}
-
-.form_wrapper {
-    margin: 0 auto;
-
 }
 
 .form {
@@ -52,6 +48,8 @@
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
     -webkit- transform: translateY(-50%) translateX(-50%);
+    margin: 0 auto;
+    border: 2px　solid #607D8B;
 }
 
 /* layout */
@@ -87,8 +85,8 @@ footer{
 }
 
 /* timeline.erb */
-.post_wrappeer{
-    margin: 0 atuo;
+.post_wrapper{
+    margin: 60px auto 0 auto;
     text-align: center;
 }
 
@@ -100,21 +98,37 @@ footer{
 .liked_wrapper {
     display: flex;
     justify-content:flex-start;
-    margin: 15px 100px;
+    margin: 15px 160px;
 }
 
 .like_icon{
-    font-size: 30px;
+    font-size: 50px;
 }
 
+.contents_wrapper{
+    margin-bottom:30px;
+}
+
+.post_plofile{
+    padding-top:25px;
+    display:flex;
+    justify-content:center;
+    padding-bottom:15px;
+}
+
+.post_plofile img{
+    margin-right:20px;
+}
  /* plofile.erb */
 
 .plofile_username{
+    padding: 30px;
     text-align: center;
 }
 
 .plofile_username_wrapper{
     padding: 30px;
+    margin-bottom:60px;
 }
 
 .plofile_detail{
@@ -122,7 +136,7 @@ footer{
     justify-content: space-between;
 }
 
-.edit_button{
+.edit_button {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -136,3 +150,24 @@ footer{
     width:200px;
     margin: 10px 10px;
 }
+
+.save_button{
+    width:80%;
+}
+
+.contents_wrapper{
+    padding-bottom:50px;
+}
+
+/* like_list.erb */
+.like_list_wrapper{
+    margin:35px 15px;
+}
+
+.like_list_post{
+    width:220px;
+    height:220px;
+    margin-left:5px;
+    margin-top:20px;
+}
+

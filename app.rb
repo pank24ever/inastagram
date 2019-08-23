@@ -155,7 +155,7 @@ end
 #削除画面
 get '/delete/:id' do
   connection.exec('delete from post where id = $1',[params['id']])
-  redirect '/timeline'
+  redirect '/plofile'
 end 
 
 #Plofile画面
@@ -195,7 +195,6 @@ get '/like/:post_id' do
   check_login
   # 下のsql文の.firstつけた。：ヤブ
   post_id = connection.exec('select * from "like" where user_id = $1 and post_id = $2',[session[:user_id],params[:post_id]]).first
-  puts post_id
   unless post_id #LIKEテーブルにいいねしている情報がなければ、いいね押すことができる
     connection.exec('insert into "like"(user_id,post_id) values($1,$2)',[session[:user_id],params[:post_id]])
     content_type :json
@@ -207,16 +206,9 @@ get '/like/:post_id' do
   end
 end
 
-#ユーザー検索
-get '/search' do
-
-end
-
 #Like一覧(今までLIKEした投稿の一覧を見ることができる)
 get '/like_list' do
   check_login
-  # @like = connection.exec('select * from "like" where user_id = $1',[session[:id]])
-
   @likes = connection.exec('select * from "like" inner join post on "like".post_id = post.id where "like".user_id = $1 order by post.id desc',[session[:user_id]])
   erb :like_list
 end 
@@ -224,6 +216,7 @@ end
 #相手のプロフィールを表示する
 get '/show_your_plofile/:id' do
   check_login
+  #ifはOK
   if params['id'] == session[:user_id]
     redirect '/plofile'
   else
@@ -232,19 +225,21 @@ get '/show_your_plofile/:id' do
     @your_posts = connection.exec('select * from post where user_id = $1 order by id desc',[params['id']])
     erb :show_your_plofile
   end
+end 
+
+#投稿を編集する
+get '/edit_post/:id' do
+  check_login
+  @post_id = params[:id]
+  @posts = connection.exec('select * from post where user_id = $1 and id = $2',[session[:user_id],params[:id]]).first
+  erb :edit_post,layout: nil
 end
 
-#followする
-#非同期で行いたい
-# get '/follow/:user_id' do
-#   check_login
-#   follow = connection.exec('insert into follow(following_id,followed_id) values($1,$2)',[session[:user_id],params['user_id']]).first
-#   unless follow
-#     connection.exec('insert into follow(c_id,followed_id) values($1,$2)',[session[:user_id],params['user_id']])
-#     content_type :json
-#     @data = {"a" => 1,"b" => 2}
-#   else 
-#     connection.exec('delete from "like" where following_id = $1 and followed_id = $2',[session[:user_id],params['user_id']])
-#     content_type :json
-#     @data = {"a" => 1,"b" => 2}
-# end
+post '/edit_post/:id' do
+  title = params['title']
+  contents = params['contents']
+  img = params['img']['filename']
+  post_id = params[:id]
+  connection.exec('update post set title = $1,contents = $2,img = $3 where id = $4',[title,contents,img,post_id])
+  redirect '/plofile'
+end
